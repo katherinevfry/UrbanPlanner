@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UrbanPlanner.Buildings
+namespace UrbanPlanner.Metro
 {
     class Building
     {
@@ -23,11 +23,13 @@ namespace UrbanPlanner.Buildings
             {
                 return Width * Depth * (3 * Stories);
             } 
-        } 
+        }
+        public string Name { get; set; }
 
         public Building(string address)
         {
             _address = address;
+            Name = address;
         }
 
         public void Construct()
@@ -38,6 +40,17 @@ namespace UrbanPlanner.Buildings
         public void Purchase(string name)
         {
             _owner = name;
+            Console.WriteLine(_address);
+            Console.WriteLine($"Designed by {_designer}");
+            Console.WriteLine($"Constructed on {_dateConstructed}");
+            Console.WriteLine($"Owned by {_owner}");
+            Console.WriteLine($"{Volume} cubic meters of space");
+        }
+
+        public void buildingInfo()
+        {
+            Console.WriteLine("-------------------");
+            Console.WriteLine(_owner);
             Console.WriteLine(_address);
             Console.WriteLine($"Designed by {_designer}");
             Console.WriteLine($"Constructed on {_dateConstructed}");
