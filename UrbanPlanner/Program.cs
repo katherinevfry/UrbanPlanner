@@ -1,5 +1,5 @@
 ﻿using System;
-using UrbanPlanner.Buildings;
+using UrbanPlanner.Metro;
 
 namespace UrbanPlanner
 {
@@ -31,6 +31,30 @@ namespace UrbanPlanner
             NumberThree.Construct();
             NumberThree.Purchase("Samwise Gamgee");
 
+            var megalopolis = new City("Katy Town");
+            megalopolis.FoundCity();
+            megalopolis.ElectMayor("Katy Fry");
+            megalopolis.AddBuilding(TwoTwoOneB);
+            megalopolis.AddBuilding(NumberThree);
+
+
+            foreach (var building in megalopolis.Buildings)
+            { 
+                building.buildingInfo();
+                megalopolis.CityInfo();
+
+            }
+
+            var nash = new City("Nashville");
+            nash.FoundCity();
+            nash.ElectMayor("Dolly Parton");
+            nash.AddBuilding(ThirtyTwoTen);
+
+            foreach (var building in nash.Buildings)
+            {
+                building.buildingInfo();
+                nash.CityInfo();
+            }
         }
     }
 }
